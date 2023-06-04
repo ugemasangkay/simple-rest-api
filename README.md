@@ -1,6 +1,16 @@
-# Simple Rest API - Masangkay
+# Simple Rest API
 
 This is a simple web application built with Laravel and ReactJS. The application allows users to create users, orders, and display a list of orders with order count.
+
+Table of Contents
+  - [Tech Requirements](#tech-requirements)
+  - [Installation](#installation)
+  - [Features](#features)
+  - [Directory Structure](#directory-structure)
+  - [API List](#api-list)
+  - [Tech Stack](#tech-stack)
+  - [Author](#author)
+  - [License](#license)
 
 ## Tech Requirements
 
@@ -16,29 +26,29 @@ To run this application locally, you need to have the following software install
 Follow these steps to install and run the application:
 
 1. Clone the repository:
-```
+```bash
 git clone https://github.com/ugemasangkay/simple-rest-api.git
 ```
 
 2. Navigate to the project directory:
-```
+```bash
 cd simple-rest-api/
 ```
 
 3. Install PHP dependencies:
-```
+```bash
 composer install
 ```
 
 4. Install JavaScript dependencies:
-```
+```bash
 npm install
 ```
 
 5. Create a copy of the .env.example file and rename it to .env. Update the necessary environment variables such as database credentials.
 
 Env variable value used:
-```
+```bash
 APP_NAME="Simple Rest API"
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
@@ -49,22 +59,22 @@ DB_PASSWORD=postgres
 ```
 
 6. Generate an application key:
-```
+```bash
 php artisan key:generate
 ```
 
 7. Run the database migrations and seed the database:
-```
+```bash
 php artisan migrate --seed
 ```
 
 8. Compile the assets:
-```
+```bash
 npm run dev
 ```
 
 9. Start the local development server:
-```
+```bash
 php artisan serve
 ```
 
@@ -94,11 +104,10 @@ The important directories and files in this project are:
 | Description              | Method   | URI                 | CURL Request                                              |
 |--------------------------|----------|---------------------|-----------------------------------------------------------|
 | Create a user            | POST     | api/users           | `curl -X POST http://localhost:8000/api/users -H "Content-Type: application/json" -d '{"name": "John Doe"}'` |
-| Create an order          | POST     | api/orders          | `curl -X POST http://localhost:8000/api/orders -H "Content-Type: application/json" -d '{"date": "2023-06-05", "total_value": 100, "user_id": 123}'` |
+| Create an order          | POST     | api/orders          | `curl -X POST http://localhost:8000/api/orders -H "Content-Type: application/json" -d '{"date": "2023-06-05", "total_value": 100, "user_id": 1}'` |
 | Get all users            | GET | api/users           | `curl http://localhost:8000/api/users`                    |
 | Get user by id and returns all orders     | GET | api/users/{userId}  | `curl http://localhost:8000/api/users/1`                  |
-| Update user detail by ID     | PUT | api/users/{userId}  | `curl -X PUT https://localhost:8000/api/users/1 -H "Content-Type: application/json" -d '{"name": "NEW_NAME"}'`
-`                  |
+| Update user detail by ID     | PUT | api/users/{userId}  | `curl -X PUT http://localhost:8000/api/users/1 -H "Content-Type: application/json" -d '{"name": "NEW_NAME"}'`
 
 ## Tech Stack
 
