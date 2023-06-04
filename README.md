@@ -17,12 +17,12 @@ Follow these steps to install and run the application:
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/simple-rest-api.git
+git clone https://github.com/ugemasangkay/simple-rest-api.git
 ```
 
 2. Navigate to the project directory:
 ```
-cd simple-rest-api
+cd simple-rest-api/
 ```
 
 3. Install PHP dependencies:
