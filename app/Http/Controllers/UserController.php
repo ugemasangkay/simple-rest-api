@@ -38,8 +38,12 @@ class UserController extends Controller
     public function show($userId)
     {
         $user = User::getUserWithOrders($userId);
-        $sumTotalValue = $user->orders->sum('total_value');
-        $user->sum_total_value = $sumTotalValue;
+
+        if (isset($user['orders']) === true) {
+            $sumTotalValue = $user->orders->sum('total_value');
+            $user->sum_total_value = $sumTotalValue;
+        }
+
         return response()->json($user);
     }
 
